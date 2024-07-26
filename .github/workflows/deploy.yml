@@ -54,7 +54,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.EC2_PORT }}
           script: |
-            if [ "${{ github.ref_name }}" == "master" ]; then
+            if [ "${{ github.ref_name }}" == "production" ]; then
               sh deploy-production.sh
             elif [ "${{ github.ref_name }}" == "stage" ]; then
               sh deploy-stage.sh
@@ -62,6 +62,7 @@ jobs:
               sh deploy-qa.sh
             elif [ "${{ github.ref_name }}" == "dev" ]; then
               sh deploy-dev.sh
+            fi
 
 
 
