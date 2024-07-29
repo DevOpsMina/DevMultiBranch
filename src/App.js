@@ -177,7 +177,7 @@ function App() {
         </label>
         <br />
         <label>
-          Give Description Please:
+          Give Me Description Please:
           <input
             type="text"
             value={description}
