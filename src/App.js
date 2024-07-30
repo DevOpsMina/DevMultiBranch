@@ -167,7 +167,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('api-mina.learn.cloudlaya.com:5000/api/data');
+      const response = await axios.get('http://api-mina.learn.cloudlaya.com/api/data');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -177,7 +177,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('api-mina.learn.cloudlaya.com:5000/api/data', { name, description });
+      await axios.post('http://api-mina.learn.cloudlaya.com/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
@@ -203,7 +203,7 @@ function App() {
         </label>
         <br />
         <label>
-          Description:
+          Descriptionn:
           <input
             type="text"
             value={description}
@@ -215,12 +215,12 @@ function App() {
         <button type="submit">Add Data</button>
       </form>
       
-      <h2>Data List</h2>
+      <h2>Data List Please</h2>
       <ul>
         {data.map((item) => (
           <li key={item.id}>
             <strong>Nameee:</strong> {item.name} <br />
-            <strong>Description:</strong> {item.description}
+            <strong>Descriptioon:</strong> {item.description}
           </li>
         ))}
       </ul>
