@@ -167,7 +167,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('api-mina.learn.cloudlaya.com:5000');
+      const response = await axios.get('api-mina.learn.cloudlaya.com/api/data:5000');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -177,7 +177,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('api-mina.learn.cloudlaya.com:5000', { name, description });
+      await axios.post('api-mina.learn.cloudlaya.com/api/data:5000', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
