@@ -167,7 +167,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://api-mina.learn.cloudlaya.com/api/data');
+      const response = await axios.get('http://api-mina.learn.cloudlaya.com/api/data');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -177,7 +177,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://api-mina.learn.cloudlaya.com/api/data', { name, description });
+      await axios.post('http://api-mina.learn.cloudlaya.com/api/data', { name, description });
       alert('Data added successfully!');
       setName('');
       setDescription('');
@@ -190,7 +190,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Add Data to MySQL via React and Node.js</h1>
+      <h1>Add Data to MySQL via Reactt and Node.js</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
