@@ -215,7 +215,7 @@ function App() {
         <button type="submit">Add Data</button>
       </form>
       
-      <h2>Data List Please</h2>
+      <h2>Data List PleaseEEEEEEEE</h2>
       <ul>
         {data.map((item) => (
           <li key={item.id}>
