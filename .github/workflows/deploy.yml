@@ -3,7 +3,7 @@ name: Build, publish, and deploy Docker image to EC2
 on:
   push:
     branches:
-      - dev 
+      - dev
       - qa
       - stage
       - production
@@ -26,11 +26,11 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
- 
+
       - name: Build Docker image
         run: |
           docker build -t mina-frontend-dev .
- 
+
       - name: Tag Docker image
         run: |
           docker tag mina-frontend-dev:latest 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-frontend-dev:${{ github.ref_name }}-latest
@@ -45,6 +45,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
 
       - name: SSH into EC2 and deploy
         uses: appleboy/ssh-action@master
@@ -63,12 +69,3 @@ jobs:
             elif [ "${{ github.ref_name }}" == "dev" ]; then
               sh deploy-dev.sh
             fi
-
-
-
-
-
-
-
-
-
