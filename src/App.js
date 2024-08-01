@@ -190,7 +190,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Add Data to MySQL via Reactt and Node.js</h1>
+      <h1>Add Data to MySQL via Reactt and Node.jss</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
