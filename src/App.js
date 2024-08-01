@@ -219,7 +219,7 @@ function App() {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <strong>Nameeee:</strong> {item.name} <br />
+            <strong>Nameeee: </strong> {item.name} <br />
             <strong>Description Please:</strong> {item.description}
           </li>
         ))}
