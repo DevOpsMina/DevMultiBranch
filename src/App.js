@@ -76,7 +76,11 @@ function App() {
 export default App;
 */
 
+<<<<<<< HEAD
 /*import React, { useState, useEffect } from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> cec3a6cb (ERR)
 import axios from 'axios';
 
 function App() {
@@ -90,7 +94,11 @@ function App() {
 
   const fetchData = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get('https://api-mina.learn.cloudlaya.com/api/data');
+=======
+      const response = await axios.get('http://api-mina.learn.cloudlaya.com/api/data');
+>>>>>>> cec3a6cb (ERR)
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -100,7 +108,11 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       await axios.post('https://api-mina.learn.cloudlaya.com/api/data', { name, description });
+=======
+      await axios.post('http://api-mina.learn.cloudlaya.com/api/data', { name, description });
+>>>>>>> cec3a6cb (ERR)
       alert('Data added successfully!');
       setName('');
       setDescription('');
@@ -151,6 +163,7 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;*/
 
 import React, { useState, useEffect } from 'react';
@@ -229,7 +242,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
