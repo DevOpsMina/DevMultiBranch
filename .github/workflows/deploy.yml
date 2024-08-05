@@ -29,15 +29,15 @@ jobs:
  
       - name: Build Docker image
         run: |
-          docker build -t mina-frontend-dev .
+          docker build -t kalu-frontend .
  
       - name: Tag Docker image
         run: |
-          docker tag mina-frontend-dev:latest 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-frontend-dev:${{ github.ref_name }}-latest
+          docker tag kalu-frontend:latest 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/kalu-frontend:${{ github.ref_name }}-latest
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/mina-frontend-dev:${{ github.ref_name }}-latest
+          docker push 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/kalu-frontend:${{ github.ref_name }}-latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,13 +55,13 @@ jobs:
           port: ${{ secrets.EC2_PORT }}
           script: |
             if [ "${{ github.ref_name }}" == "production" ]; then
-              sh deploy-production.sh
+              sh deploy-fproduction.sh
             elif [ "${{ github.ref_name }}" == "stage" ]; then
-              sh deploy-stage.sh
+              sh deploy-fstage.sh
             elif [ "${{ github.ref_name }}" == "qa" ]; then
-              sh deploy-qa.sh
+              sh deploy-fqa.sh
             elif [ "${{ github.ref_name }}" == "dev" ]; then
-              sh deploy-dev.sh
+              sh deploy-fdev.sh
             fi
 
 
