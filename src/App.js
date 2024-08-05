@@ -249,7 +249,7 @@ function App() {
       const response = await axios.get('https://api-mina.learn.cloudlaya.com');
       setData(response.data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching dataa:', error);
     }
   };
 
